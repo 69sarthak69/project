@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Clothing Store</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f1f1f1;
+      margin: 0;
+      padding: 0;
+    }
+    
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    
+    nav {
+      background-color: #555;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+    }
+    
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+    
+    main {
+      padding: 20px;
+      text-align: center;
+    }
+    
+    h1 {
+      margin-top: 0;
+    }
+    
+    .featured-products {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    
+    .product-card {
+      width: 250px;
+      margin: 10px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #fff;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    
+    .product-card img {
+      width: 100%;
+      max-height: 200px;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+    
+    .product-card h3 {
+      margin-top: 10px;
+    }
+    
+    .product-card p {
+      color: #888;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Welcome to Men's Station</h1>
+  </header>
+  <nav>
+    <a href="home.html">Home</a>
+    <a href="shop.html">Shop</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="login.html">Login</a>
+    <a href="signup.html">Signup</a>
+  </nav>
+  <main>
+    <h2>Featured Products</h2>
+    <div class="featured-products">
+      <div class="product-card">
+        <img src="images/download.jpg" alt="Half Pant">
+        <h3>Black Halfpant</h3>
+        <p>Rs 999</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="images/pants.jpg" alt="Pant">
+        <h3>Pant</h3>
+        <p>Rs 1299</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="images/shirt.jpg" alt="Shirt">
+        <h3>Shirts for men</h3>
+        <p>Rs 1199</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="images/tshirt.jpg" alt="T-Shirt">
+        <h3>T-shirt</h3>
+        <p>Rs 1200</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="images/jacket.jpg" alt="Jacket">
+        <h3>Jacket</h3>
+        <p>Rs 2599</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="images/puff jacket.jpg" alt="Puffer Jacket">
+        <h3>Puffer Jacket</h3>
+        <p>Rs 2899</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="images/triusers.jpg" alt="Trouser">
+        <h3>Trousers for men</h3>
+        <p>Rs 899</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <p>&copy; 2023 Men's Station. All rights reserved.</p>
+  </footer>
+  <script>
+    // Select all the "Add to Cart" buttons
+    const addToCartButtons = document.querySelectorAll('.add-to-cart');
+
+    // Add click event listeners to each button
+    addToCartButtons.forEach(button => {
+      button.addEventListener('click', addToCart);
+    });
+
+    // Function to handle the "Add to Cart" button click
+    function addToCart(event) {
+      // Get the product details from the clicked button's parent element
+      const productCard = event.target.parentNode;
+      const productName = productCard.querySelector('h3').textContent;
+      const productPrice = productCard.querySelector('p').textContent;
+
+      // Create a new item object with the product details
+      const item = {
+        name: productName,
+        price: productPrice
+      };
+
+      // Add the item to the cart (you can customize the logic based on your needs)
+      addToCartLogic(item);
+
+      // Provide visual feedback to the user (optional)
+      alert('Product added to cart!');
+    }
+
+    // Custom logic to handle adding the item to the cart (you need to implement this)
+    function addToCartLogic(item) {
+      // Implement your own logic to add the item to the cart,
+      // such as updating a shopping cart object, storing the item in local storage, etc.
+      console.log('Adding item to cart:', item);
+    }
+  </script>
+</body>
+</html>
